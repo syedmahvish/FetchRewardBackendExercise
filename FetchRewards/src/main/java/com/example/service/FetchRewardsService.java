@@ -17,17 +17,17 @@ public class FetchRewardsService {
      * Add transaction into list of type AddRewardRequest
      * @param addRewardRequest accepts input in format payer (string), points (integer), timestamp (date).
      * @return HTTPStatus : Ok - success
-     *                      EXPECTATION_FAILED : datatype/parameter mismatched.
+     *                      BAD_REQUEST : datatype/parameter mismatched.
      */
     public HttpStatus addRewards(AddRewardRequest addRewardRequest){
         Date timestamp = addRewardRequest.getTimestamp();
-        if(!(timestamp instanceof Date)) return HttpStatus.EXPECTATION_FAILED;
+        if(!(timestamp instanceof Date)) return HttpStatus.BAD_REQUEST;
 
         String payer = addRewardRequest.getPayer();
-        if(!(payer instanceof String)) return HttpStatus.EXPECTATION_FAILED;
+        if(!(payer instanceof String)) return HttpStatus.BAD_REQUEST;
 
         Integer points = addRewardRequest.getPoints();
-        if(!(points instanceof Integer)) return HttpStatus.EXPECTATION_FAILED;
+        if(!(points instanceof Integer)) return HttpStatus.BAD_REQUEST;
 
         totalPoints += points;
 
@@ -117,7 +117,8 @@ public class FetchRewardsService {
             }
         }
 
-        if(spend > 0) throw new IOException("Not enough points to spend" + " spend :"  + spend + ", balance:" + (originalSpend - spend));
+        if(spend > 0) throw new IOException("Not enough points to spend" + " spend :"  + spend + ", balance:"
+                + (originalSpend - spend));
 
         List<GetRewardBalanceResponse> getRewardBalanceResponseList = new ArrayList<>();
 

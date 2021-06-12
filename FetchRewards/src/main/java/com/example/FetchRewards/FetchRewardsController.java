@@ -20,13 +20,12 @@ public class FetchRewardsController {
      * Method type : Post
      * Parameter : payer (string), points (integer), timestamp (date) (class : AddRewardRequest)
      * Return : HttpStatus: Ok : success,
-     *          EXPECTATION_FAILED : if datatype/parameter does not matches
+     *          BAD_REQUEST : if datatype/parameter does not matches
      * */
     @PostMapping("/addRewards")
     public ResponseEntity<HttpStatus> addRewards(@RequestBody AddRewardRequest addRewardRequest){
             HttpStatus responseStatus = fetchRewardsService.addRewards(addRewardRequest);
             return new ResponseEntity<>(responseStatus);
-
     }
 
     /**
@@ -35,19 +34,22 @@ public class FetchRewardsController {
      * @param spendAndGetRewardBalanceRequest : takes point to spend
      * @return List of payer { "payer": <string>, "points": <integer> }  (class : GetRewardBalanceResponse)
      * @throws IOException : If totalpoints < 0 , return exception
-     * If spendPoint > available points return Exception with message that indicates how much spend and how much left. Also update balance.
+     * If spendPoint > available points return Exception with message that indicates how much spend and how much left.
+     * Also update balance.
      * HttpStatus : Ok - success
-     *              FORBIDDEN - unsuccessful.
+     *              BAD_REQUEST - unsuccessful.
      */
     @PostMapping("/spendPoints")
-    public ResponseEntity<List<GetRewardBalanceResponse>> spendAndGetRewardBalance(@RequestBody SpendAndGetRewardBalanceRequest spendAndGetRewardBalanceRequest) throws IOException {
+    public ResponseEntity<List<GetRewardBalanceResponse>> spendAndGetRewardBalance
+        (@RequestBody SpendAndGetRewardBalanceRequest spendAndGetRewardBalanceRequest) throws IOException {
         try{
-            List<GetRewardBalanceResponse> rewardsServiceRewardBalanceResponses = (List<GetRewardBalanceResponse>) fetchRewardsService.getRewardBalanceResponses(spendAndGetRewardBalanceRequest);
+            List<GetRewardBalanceResponse> rewardsServiceRewardBalanceResponses
+                    = (List<GetRewardBalanceResponse>) fetchRewardsService.getRewardBalanceResponses(spendAndGetRewardBalanceRequest);
             return new ResponseEntity<List<GetRewardBalanceResponse>>(rewardsServiceRewardBalanceResponses, HttpStatus.OK);
         }catch (IOException error){
             System.out.println("Exception occur: " + error);
         }
-        return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     /**
@@ -58,8 +60,8 @@ public class FetchRewardsController {
      */
     @GetMapping("/checkBalance")
     public ResponseEntity<List<GetRewardBalanceResponse>> checkBalanceResponse() {
-        List<GetRewardBalanceResponse> rewardBalanceResponses = (List<GetRewardBalanceResponse>) fetchRewardsService.checkandGetBalance();
+        List<GetRewardBalanceResponse> rewardBalanceResponses
+                = (List<GetRewardBalanceResponse>) fetchRewardsService.checkandGetBalance();
         return new ResponseEntity<List<GetRewardBalanceResponse>>(rewardBalanceResponses, HttpStatus.OK);
     }
-
 }
