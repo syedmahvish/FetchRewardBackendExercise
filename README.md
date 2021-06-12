@@ -17,13 +17,13 @@
 ### Return type : HttpStatus : Return : HttpStatus: Ok : success,  EXPECTATION_FAILED : if datatype/parameter does not matches
 
 
-## Give Points to spend using postman:
+##  Spend Points using postman:
 ### Method type : POST
 ### http://localhost:8090/spendPoints (localHost/spendPoints)
 ### Parameter : In body : { "points": 5000 }
 ### Return type : HttpStatus : Ok - success, FORBIDDEN - unsuccessful.
 
-## Check balance
+## Check balance using Browser
 ### Method type : GET
 ### http://localhost:8090/checkBalance (localHost/checkBalance)
 ### Return type : HttpStatus : Ok - success
