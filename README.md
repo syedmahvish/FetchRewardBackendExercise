@@ -3,11 +3,11 @@
 ### A web service that accepts HTTP requests and returns responses based on the conditions for reward system
 
 ## How to run:
-######## Download complete project from github
-######## Need tomcat to setup localhost
-######## Open in IDE(IntellIJ) build and run project
-######## Use postman to make POST request.
-######## Use webBrowser to make GET request.
+### Download complete project from github
+### Need tomcat to setup localhost
+### Open in IDE(IntellIJ) build and run project
+### Use postman to make POST request.
+### Use webBrowser to make GET request.
 
 
 ## Add transaction using postman:
@@ -18,14 +18,14 @@
 
 
 ##  Spend Points using postman:
-######## Method type : POST
-######## http://localhost:8090/spendPoints (localHost/spendPoints)
-######## Parameter : In body : { "points": 5000 }
-######## Return type : HttpStatus : Ok - success, FORBIDDEN - unsuccessful.
+### Method type : POST
+### http://localhost:8090/spendPoints (localHost/spendPoints)
+### Parameter : In body : { "points": 5000 }
+### Return type : HttpStatus : Ok - success, FORBIDDEN - unsuccessful.
 
 ## Check balance using Browser
-######## Method type : GET
-######## http://localhost:8090/checkBalance (localHost/checkBalance)
-######## Return type : HttpStatus : Ok - success
+### Method type : GET
+### http://localhost:8090/checkBalance (localHost/checkBalance)
+### Return type : HttpStatus : Ok - success
 
 
