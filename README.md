@@ -11,10 +11,10 @@
 
 
 ## Add transaction using postman:
-######## Method type : POST
-######## http://localhost:8090/addRewards (localHost/addRewards)
-######## Parameter : In body : { "payer": "DANNON", "points": 1000, "timestamp": "2020-11-02T14:00:00Z" }
-######## Return type : HttpStatus : Return : HttpStatus: Ok : success,  EXPECTATION_FAILED : if datatype/parameter does not matches
+### Method type : POST
+### http://localhost:8090/addRewards (localHost/addRewards)
+### Parameter : In body : { "payer": "DANNON", "points": 1000, "timestamp": "2020-11-02T14:00:00Z" }
+### Return type : HttpStatus : Return : HttpStatus: Ok : success,  EXPECTATION_FAILED : if datatype/parameter does not matches
 
 
 ##  Spend Points using postman:
