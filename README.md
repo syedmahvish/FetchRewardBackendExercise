@@ -2,12 +2,17 @@
 ## Description:
 ### A web service that accepts HTTP requests and returns responses based on the conditions for reward system
 
-### How to run:
-Download complete project from github
-Need tomcat to setup localhost
-### Open in IDE(IntellIJ) build and run project
-### Use postman to make POST request.
-### Use webBrowser to make GET request.
+### How to run using command line
+#### Download the provided jar file
+#### Run the jar file using the following command
+java -jar FetchRewards-0.0.1-SNAPSHOT.jar com.example.FetchRewards.FetchRewardsApplication --server.port=8090
+
+### How to run using Intellij:
+#### Download complete project from github.
+#### Open in IDE(IntellIJ) build and run project.
+
+
+#### Use postman to make GET and POST request.
 
 
 ## Add transaction using postman:
