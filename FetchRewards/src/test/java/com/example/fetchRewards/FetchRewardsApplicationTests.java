@@ -1,4 +1,4 @@
-package com.example.FetchRewards;
+package com.example.fetchRewards;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

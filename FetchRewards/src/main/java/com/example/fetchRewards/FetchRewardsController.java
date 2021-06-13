@@ -1,4 +1,4 @@
-package com.example.FetchRewards;
+package com.example.fetchRewards;
 
 import com.example.pojo.AddRewardRequest;
 import com.example.pojo.GetRewardBalanceResponse;

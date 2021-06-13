@@ -1,4 +1,4 @@
-package com.example.FetchRewards;
+package com.example.fetchRewards;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
