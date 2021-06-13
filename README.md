@@ -11,11 +11,19 @@ java -jar fetchRewards.jar  --server.port=8090
 
 ### Method type : POST
 ### Method name : addRewards
-curl  -i -X POST -H "Content-Type: application/json"  -d '{ "payer": "DANNON", "points": 1000, "timestamp": "2020-11-02T14:00:00Z" }' http://localhost:8090/addRewards
+curl -i -X POST -H "Content-Type: application/json" -d '{ "payer": "DANNON", "points": 1000, "timestamp": "2020-11-02T14:00:00Z" }' http://localhost:8090/addRewards
+
+curl -i -X POST -H "Content-Type: application/json" -d '{ "payer": "UNILEVER", "points": 200, "timestamp": "2020-10-31T11:00:00Z" }' http://localhost:8090/addRewards
+
+curl -i -X POST -H "Content-Type: application/json" -d '{ "payer": "DANNON", "points": -200, "timestamp": "2020-10-31T15:00:00Z" }' http://localhost:8090/addRewards
+
+curl -i -X POST -H "Content-Type: application/json" -d '{ "payer": "MILLER COORS", "points": 10000, "timestamp": "2020-11-01T14:00:00Z" }' http://localhost:8090/addRewards
+
+curl -i -X POST -H "Content-Type: application/json" -d '{ "payer": "DANNON", "points": 300, "timestamp": "2020-10-31T10:00:00Z" }' http://localhost:8090/addRewards
 
 ### Method type : POST
 ### Method name : spendPoints
-curl -i -X POST -H "Content-Type: application/json"  -d '{ "points": 1000 }'  http://localhost:8090/spendPoints
+curl -i -X POST -H "Content-Type: application/json"  -d '{ "points": 5000 }'  http://localhost:8090/spendPoints
 
 ### Method type : GET
 ### Method name : checkBalance
