@@ -4,16 +4,29 @@
 
 ### How to run using command line
 #### Download the provided jar file
-#### Run the jar file using the following command
-java -jar FetchRewards-0.0.1-SNAPSHOT.jar com.example.FetchRewards.FetchRewardsApplication --server.port=8090
+#### Go to the same folder in which fetchRewards.jar has been downloaded and run the jar file using the following command
+java -jar fetchRewards.jar  --server.port=8090
+
+### Using curl command to make GET and POST request:
+
+### Method type : POST
+### Method name : addRewards
+curl  -i -X POST -H "Content-Type: application/json"  -d '{ "payer": "DANNON", "points": 1000, "timestamp": "2020-11-02T14:00:00Z" }' http://localhost:8090/addRewards
+
+### Method type : POST
+### Method name : spendPoints
+curl -i -X POST -H "Content-Type: application/json"  -d '{ "points": 1000 }'  http://localhost:8090/spendPoints
+
+### Method type : GET
+### Method name : checkBalance
+curl -i http://localhost:8090/checkBalance
+
 
 ### How to run using Intellij:
 #### Download complete project from github.
 #### Open in IDE(IntellIJ) build and run project.
 
-
 #### Use postman to make GET and POST request.
-
 
 ## Add transaction using postman:
 ### Method type : POST
