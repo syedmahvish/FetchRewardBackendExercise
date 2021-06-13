@@ -22,7 +22,7 @@ curl -i -X POST -H "Content-Type: application/json"  -d '{ "points": 1000 }'  ht
 curl -i http://localhost:8090/checkBalance
 
 
-##---------------------- OR ---------------------
+# ---------------------- OR ---------------------
 
 ## How to run using Intellij:
 #### Download complete project from github.
